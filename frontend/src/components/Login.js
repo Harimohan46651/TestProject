@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import './bodyStyles.css'
 import { useNavigate } from 'react-router-dom'
 
 function Login() {
@@ -27,16 +28,26 @@ function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-      <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-      <button type="submit">Login</button>
-      <br></br>
-      Don't have an account? please Signup <br></br>
-      <button type="button" onClick={handleSignupRedirect}>Signup</button>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card p-4 shadow-lg" style={{ width: '400px' }}>
+      <h2 className="text-center mb-4">Login</h2>
+        <form onSubmit={handleSubmit}>
+        <div className="form-group mb-3">
+        <label htmlFor="email">email</label>
+          <input name="email" className="form-control" type="email" placeholder="Email" onChange={handleChange} required />
+          </div>
+          <div className="form-group mb-3">
+          <label htmlFor="email">password</label>
+          <input name="password" className="form-control" type="password" placeholder="Password" onChange={handleChange} required />
+          </div>
+          <button type="submit" className="btn btn-primary w-100">Login</button>
+          <br></br>
+          Don't have an account? please Signup <br></br>
+          <button type="button" className="btn btn-primary w-100" onClick={handleSignupRedirect}>Signup</button>
 
-    </form>
-
+        </form>
+      </div>
+    </div>
 
   )
 }
