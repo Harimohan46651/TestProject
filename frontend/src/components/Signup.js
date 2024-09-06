@@ -1,7 +1,6 @@
-// Signup.js
-
 import React, { useState } from 'react'
 import axios from 'axios'
+import './bodyStyles.css'
 import { useNavigate } from 'react-router-dom'
 
 function Signup() {
@@ -27,22 +26,45 @@ function Signup() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="firstName" type="text" placeholder="First Name" onChange={handleChange} required />
-      <input name="lastName" type="text" placeholder="Last Name" onChange={handleChange} required />
-      <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-      <input name="mobile" type="text" placeholder="Mobile" onChange={handleChange} required />
-      <select name="role" onChange={handleChange} value={formData.role}>
-        <option value="User">User</option>
-        <option value="Admin">Admin</option>
-        <option value="Guest">Guest</option>
-      </select>
-      <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-      <button type="submit">Signup</button>
-      <br></br>
-      Alredy have an account? please Login <br></br>
-      <button type="button" onClick={handleLoginRedirect}>Login</button>
-    </form>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card p-4 shadow-lg" style={{ width: '400px' }}>
+      <h2 className="text-center mb-4">Signup</h2>
+        <form onSubmit={handleSubmit}>
+        <div className="form-group mb-3">
+          <label htmlFor="firstName">firstName:</label>
+            <input name="firstName" type="text" placeholder="First Name" onChange={handleChange} required />
+        </div>
+        <div className="form-group mb-3">
+          <label htmlFor="lastName">lastName:</label>
+           <input name="lastName" type="text" placeholder="Last Name" onChange={handleChange} required />
+        </div>
+        <div className="form-group mb-3">
+          <label htmlFor="email">email:</label>
+            <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
+        </div>
+        <div className="form-group mb-3">
+        <label htmlFor="mobile">Mobile:</label>
+          <input name="mobile" type="text" placeholder="Mobile" onChange={handleChange} required />
+        </div>
+        <div className="form-group mb-3">
+        <label htmlFor="role">role:</label>
+          <select name="role" onChange={handleChange} value={formData.role}>
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+            <option value="Guest">Guest</option>
+          </select>
+        </div>
+        <div className="form-group mb-3">
+          <label htmlFor="password">password:</label>
+            <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
+        </div>
+          <button type="submit" className="btn btn-primary w-100">Signup</button>
+          <br></br>
+          Alredy have an account? please Login <br></br>
+          <button type="button" className="btn btn-primary w-100" onClick={handleLoginRedirect}>Login</button>
+        </form>
+      </div>
+    </div>
   )
 }
 
