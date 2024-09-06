@@ -31,23 +31,23 @@ function Signup() {
       <h2 className="text-center mb-4">Signup</h2>
         <form onSubmit={handleSubmit}>
         <div className="form-group mb-3">
-          <label htmlFor="firstName">firstName:</label>
+          <label htmlFor="firstName" className="col-sm-3 col-form-label">firstName:</label>
             <input name="firstName" type="text" placeholder="First Name" onChange={handleChange} required />
         </div>
         <div className="form-group mb-3">
-          <label htmlFor="lastName">lastName:</label>
+          <label htmlFor="lastName" className="col-sm-3 col-form-label">lastName:</label>
            <input name="lastName" type="text" placeholder="Last Name" onChange={handleChange} required />
         </div>
         <div className="form-group mb-3">
-          <label htmlFor="email">email:</label>
+          <label htmlFor="email" className="col-sm-3 col-form-label">email:</label>
             <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
         </div>
         <div className="form-group mb-3">
-        <label htmlFor="mobile">Mobile:</label>
+        <label htmlFor="mobile" className="col-sm-3 col-form-label">Mobile:</label>
           <input name="mobile" type="text" placeholder="Mobile" onChange={handleChange} required />
         </div>
         <div className="form-group mb-3">
-        <label htmlFor="role">role:</label>
+        <label htmlFor="role" className="col-sm-3 col-form-label">role:</label>
           <select name="role" onChange={handleChange} value={formData.role}>
             <option value="User">User</option>
             <option value="Admin">Admin</option>
@@ -55,7 +55,7 @@ function Signup() {
           </select>
         </div>
         <div className="form-group mb-3">
-          <label htmlFor="password">password:</label>
+          <label htmlFor="password" className="col-sm-3 col-form-label">password:</label>
             <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
         </div>
           <button type="submit" className="btn btn-primary w-100">Signup</button>
