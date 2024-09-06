@@ -36,20 +36,20 @@ function UserList() {
         <option value="Admin">Admin</option>
         <option value="Guest">Guest</option>
       </select>
-      <table>
+      <table class="table">
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Role</th>
+            <th scope="col" >First Name</th>
+            <th scope="col" >Last Name</th>
+            <th scope="col" >Role</th>
           </tr>
         </thead>
         <tbody>
           {users.map((user) => (
             <tr key={user._id}>
-              <td>{user.firstName}</td>
-              <td>{user.lastName}</td>
-              <td>{user.role}</td>
+              <td colspan="2" >{user.firstName}</td>
+              <td colspan="2" >{user.lastName}</td>
+              <td colspan="2" >{user.role}</td>
             </tr>
           ))}
         </tbody>
