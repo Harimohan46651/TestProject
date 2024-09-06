@@ -22,25 +22,38 @@ function UserList() {
   }, [role, token])
 
   const handleLogout = () => {
-    localStorage.removeItem('token')
-    window.location.reload()
+    localStorage.removeItem('token');
+    window.location.reload();
   }
-
+  
   return (
     <div>
       <button onClick={handleLogout}>Logout</button>
-      <br></br><br></br>
+      <br /><br />
       <select onChange={(e) => setRole(e.target.value)} value={role}>
         <option value="">All Roles</option>
         <option value="User">User</option>
         <option value="Admin">Admin</option>
         <option value="Guest">Guest</option>
       </select>
-      <ul>
-        {users.map((user) => (
-          <li key={user._id}>{user.firstName} {user.lastName} - {user.role}</li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user._id}>
+              <td>{user.firstName}</td>
+              <td>{user.lastName}</td>
+              <td>{user.role}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
